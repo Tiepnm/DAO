@@ -96,8 +96,8 @@ public class BankAccount
         return transaction.getAllTransactionBetweenTime(accountNumber, timeStart, timeEnd);
     }
 
-    public List<TransactionDTO> getNTransactions(String accountNumber)
+    public List<TransactionDTO> getNTransactions(String accountNumber,Integer number)
     {
-        return transaction.getNTransactions(accountNumber);
+        return transaction.getNTransactions(accountNumber,number);
     }
 }

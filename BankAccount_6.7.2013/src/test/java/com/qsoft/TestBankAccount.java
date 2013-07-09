@@ -172,7 +172,7 @@ public class TestBankAccount
     @Test
     public void testGetNTransactions()
     {
-        bankAccount.getNTransactions(accountNumber);
+        bankAccount.getNTransactions(accountNumber,10);
      //   verify(mockTransactionDAO).getNTransactions(accountNumber);
     }
 

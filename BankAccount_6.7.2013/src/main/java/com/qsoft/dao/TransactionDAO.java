@@ -18,5 +18,10 @@ import java.util.List;
 public interface TransactionDAO extends JpaRepository<TransactionDTO, Long>,TransactionDAOCustom
 {
 
+    @Query("select tr from TransactionDTO tr where tr.accountNumber=:accountNumber")
+    public List<TransactionDTO> getAllTransaction(@Param("accountNumber")String accountNumber);
+
+    @Query("select tr from TransactionDTO tr where tr.accountNumber=:accountNumber and tr.timeStamp >= :timeStart and tr.timeStamp <= :timeEnd")
+    public List<TransactionDTO> getAllTransactionsBetweenTime(@Param("accountNumber")String accountNumber,@Param("timeStart") long timeStart, @Param("timeEnd") long timeEnd);
 
 }

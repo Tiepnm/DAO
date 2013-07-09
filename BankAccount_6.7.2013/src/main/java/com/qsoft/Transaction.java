@@ -26,10 +26,10 @@ public class Transaction {
         return transactionDAO.getAllTransaction(accountNumber);
     }
     public List<TransactionDTO> getAllTransactionBetweenTime(String accountNumber,long timeStart,long timeEnd) {
-        return null;//transactionDAO.getAllTransactionsBetweenTime(accountNumber, timeStart, timeEnd);
+        return transactionDAO.getAllTransactionsBetweenTime(accountNumber, timeStart, timeEnd);
     }
 
-    public List<TransactionDTO> getNTransactions(String accountNumber) {
-        return null;//return transactionDAO.getNTransactions(accountNumber);
+    public List<TransactionDTO> getNTransactions(String accountNumber,Integer number) {
+       return transactionDAO.getNTransactions(accountNumber,number);
     }
 }

@@ -97,21 +97,38 @@ public class TestBankingAccountDao
         BankAccount account = bankingAccountDAO.findOne("0123456789");
         assertEquals("0123456789", account.getAccountNumber());
     }
-
+    public TransactionDTO createTransaction(Long webId,String accountNumber,Double amount,Long timeStamp)
+    {
+        TransactionDTO transactionDTO = new TransactionDTO();
+        transactionDTO.setAccountNumber(accountNumber);
+        transactionDTO.setAmount(amount);
+        transactionDTO.setWebId(webId);
+        transactionDTO.setTimeStamp(timeStamp);
+        transactionDTO.setDescription("create");
+        transactionDAO.save(transactionDTO);
+        return transactionDTO;
+    }
     @Test
     public void testCreateTransaction()
     {
-        TransactionDTO transactionDTO = new TransactionDTO();
-        transactionDTO.setAccountNumber("0123456789");
-        transactionDTO.setAmount(1000.0);
-        transactionDTO.setWebId(12L);
-        transactionDTO.setDescription("create");
-        transactionDAO.save(transactionDTO);
+        createTransaction(1L,"0123456789",1000.0,1000L);
         List<TransactionDTO> list = transactionDAO.getAllTransaction("0123456789");
 
         assertEquals(2, list.size());
         assertEquals(1000.0, list.get(1).getAmount());
     }
 
+    @Test
+    public void testGetAllTransactionBetweenTime()
+    {
+        createTransaction(1L,"0123456789",1000.0,1000L);
+        createTransaction(2L,"0123456789",1000.0,1500L);
+        createTransaction(3L,"0123456789",1000.0,2000L);
+        createTransaction(4L,"0123456789",1000.0,3000L);
+
+        List<TransactionDTO> list = transactionDAO.getAllTransactionsBetweenTime("0123456789",1000L,2000L);
+
+        assertEquals(3, list.size());
+    }
 
 }
