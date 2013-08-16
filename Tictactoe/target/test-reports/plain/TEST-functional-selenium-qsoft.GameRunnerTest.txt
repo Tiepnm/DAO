@@ -1,0 +1,10 @@
+Testsuite: qsoft.GameRunnerTest
+Tests run: 1, Failures: 0, Errors: 0, Time elapsed: 0.634 sec
+------------- Standard Output ---------------
+--Output from testUserJoinGameAndMoveAndStopGame--
+------------- ---------------- ---------------
+------------- Standard Error -----------------
+--Output from testUserJoinGameAndMoveAndStopGame--
+------------- ---------------- ---------------
+
+Testcase: testUserJoinGameAndMoveAndStopGame took 0.612 sec

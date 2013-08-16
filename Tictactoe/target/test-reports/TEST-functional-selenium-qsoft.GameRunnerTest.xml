@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="Tiepnm" name="qsoft.GameRunnerTest" tests="1" time="0.634" timestamp="2013-08-15T23:39:39">
+  <properties />
+  <testcase classname="qsoft.GameRunnerTest" name="testUserJoinGameAndMoveAndStopGame" time="0.612" />
+  <system-out><![CDATA[--Output from testUserJoinGameAndMoveAndStopGame--
+]]></system-out>
+  <system-err><![CDATA[--Output from testUserJoinGameAndMoveAndStopGame--
+]]></system-err>
+</testsuite>
